@@ -98,46 +98,45 @@
 #define SPI3_MISO_PIN           PC11
 #define SPI3_MOSI_PIN           PC12
 
-// #define USE_MAX7456
-// #define MAX7456_SPI_BUS         BUS_SPI2
-// #define MAX7456_CS_PIN          SPI2_NSS_PIN
+#define USE_MAX7456
+#define MAX7456_SPI_BUS         BUS_SPI2
+#define MAX7456_CS_PIN          SPI2_NSS_PIN
 
-// #define ENABLE_BLACKBOX_LOGGING_ON_SPIFLASH_BY_DEFAULT
-// #define M25P16_CS_PIN           PB2
-// #define M25P16_SPI_BUS          BUS_SPI3
-// #define USE_FLASHFS
-// #define USE_FLASH_M25P16
+#define ENABLE_BLACKBOX_LOGGING_ON_SPIFLASH_BY_DEFAULT
+#define M25P16_CS_PIN           PD2
+#define M25P16_SPI_BUS          BUS_SPI3
+#define USE_FLASHFS
+#define USE_FLASH_M25P16
 
-// #define USE_ADC
-// #define ADC_CHANNEL_1_PIN               PC0
-// #define ADC_CHANNEL_2_PIN               PC1
-// #define ADC_CHANNEL_3_PIN               PA0
+#define USE_ADC
+#define ADC_CHANNEL_1_PIN               PC1  // Current Meter
+#define ADC_CHANNEL_2_PIN               PC2  // Battery Voltage
+// #define ADC_CHANNEL_3_PIN               NONE // RSSI (Not Used)
 
-// #define CURRENT_METER_ADC_CHANNEL       ADC_CHN_1
-// #define VBAT_ADC_CHANNEL                ADC_CHN_2
-// #define RSSI_ADC_CHANNEL                ADC_CHN_3
-// #define VBAT_SCALE_DEFAULT              1600
+#define CURRENT_METER_ADC_CHANNEL       ADC_CHN_1
+#define VBAT_ADC_CHANNEL                ADC_CHN_2
+#define RSSI_ADC_CHANNEL                ADC_CHN_3
+#define VBAT_SCALE_DEFAULT              1600
 
-// #define USE_LED_STRIP
-// #define WS2811_PIN                      PA15   
-// #define WS2811_DMA_HANDLER_IDENTIFER    DMA1_ST5_HANDLER
-// #define WS2811_DMA_STREAM               DMA1_Stream5
-// #define WS2811_DMA_CHANNEL              DMA_CHANNEL_3
+#define USE_LED_STRIP
+#define WS2811_PIN                      PA8   
+#define WS2811_DMA_HANDLER_IDENTIFER    DMA2_ST4_HANDLER
+#define WS2811_DMA_STREAM               DMA2_Stream4
+#define WS2811_DMA_CHANNEL              DMA_CHANNEL_7
 
-// #define DEFAULT_FEATURES                (FEATURE_VBAT | FEATURE_OSD  )
-// #define DEFAULT_RX_TYPE                 RX_TYPE_SERIAL
-// #define SERIALRX_PROVIDER               SERIALRX_SBUS
-// #define SERIALRX_UART                   SERIAL_PORT_USART1
+#define DEFAULT_FEATURES                (FEATURE_VBAT | FEATURE_OSD  )
+#define DEFAULT_RX_TYPE                 RX_TYPE_SERIAL
+#define SERIALRX_PROVIDER               SERIALRX_SBUS
+#define SERIALRX_UART                   SERIAL_PORT_USART2
 
-// #define USE_SERIAL_4WAY_BLHELI_INTERFACE
+#define USE_SERIAL_4WAY_BLHELI_INTERFACE
 
-// #define MAX_PWM_OUTPUT_PORTS    6
-// #define USE_DSHOT
-// #define USE_ESC_SENSOR
+#define MAX_PWM_OUTPUT_PORTS    4
+#define USE_DSHOT
+#define USE_ESC_SENSOR
 
-// #define TARGET_IO_PORTA         0xffff
-// #define TARGET_IO_PORTB         0xffff
-// #define TARGET_IO_PORTC         0xffff
-// #define TARGET_IO_PORTD         (BIT(2))
-
+#define TARGET_IO_PORTA (0xFFFF & ~(BIT(4)|BIT(15))) // All pins except PA4 and PA15
+#define TARGET_IO_PORTB (0xFFFF & ~(BIT(3)|BIT(6)|BIT(7))) // All pins except PB3, PB6, and PB7
+#define TARGET_IO_PORTC (0xFFFF & ~(BIT(0)|BIT(3)|BIT(9)|BIT(14)|BIT(15))) // All pins except PC0, PC3, PC9, PC14, and PC15
+#define TARGET_IO_PORTD (BIT(2)) // Only pin PD2 is available
 
