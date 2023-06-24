@@ -17,22 +17,29 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "DLF7"
-#define USBD_PRODUCT_STRING  "DALRCF722DUAL"
+#define TARGET_BOARD_IDENTIFIER "AXISF7"
+#define USBD_PRODUCT_STRING  "AXISFLYINGARGUSF7AIO"
 
-#define USE_HARDWARE_PREBOOT_SETUP 
+#define LED0                    PA13 // Blue LED
+#define LED1                    PA14 // Red LED
+#define BEEPER                  PC13
+#define BEEPER_INVERTED
 
-// #define LED0                    PC14
-// #define BEEPER                  PC13
-// #define BEEPER_INVERTED
+// Pink FCs
+#define USE_IMU_BMI270
+#define IMU_BMI270_ALIGN        CW90_DEG
+#define BMI270_CS_PIN           PB2
+#define BMI270_SPI_BUS          BUS_SPI1
 
-// // MPU6000
-// #define USE_IMU_MPU6000
-// #define IMU_MPU6000_ALIGN       CW180_DEG
-// #define MPU6000_CS_PIN          PB0
-// #define MPU6000_SPI_BUS         BUS_SPI1
+// Black FCs
+#define USE_IMU_ICM42605
+#define IMU_ICM42605_ALIGN      CW180_DEG
+#define ICM42605_CS_PIN         PB2
+#define ICM42605_SPI_BUS        BUS_SPI1
+// GYRO=BMI270, ACC=BMI270, BARO=DPS310 PINK
+// GYRO=ICM42688P, ACC=ICM42688P, BARO=DPS310 BLACK
 
-// #define USE_VCP
+#define USE_VCP
 
 #define USE_UART1
 #define UART1_TX_PIN            PA9
@@ -135,8 +142,8 @@
 #define USE_DSHOT
 #define USE_ESC_SENSOR
 
-#define TARGET_IO_PORTA (0xFFFF & ~(BIT(4)|BIT(15))) // All pins except PA4 and PA15
-#define TARGET_IO_PORTB (0xFFFF & ~(BIT(3)|BIT(6)|BIT(7))) // All pins except PB3, PB6, and PB7
-#define TARGET_IO_PORTC (0xFFFF & ~(BIT(0)|BIT(3)|BIT(9)|BIT(14)|BIT(15))) // All pins except PC0, PC3, PC9, PC14, and PC15
-#define TARGET_IO_PORTD (BIT(2)) // Only pin PD2 is available
+#define TARGET_IO_PORTA (0xFFFF) 
+#define TARGET_IO_PORTB (0xFFFF)
+#define TARGET_IO_PORTC (0xFFFF) 
+#define TARGET_IO_PORTD (BIT(2)) 
 
