@@ -25,19 +25,15 @@
 #define BEEPER                  PC13
 #define BEEPER_INVERTED
 
-// Pink FCs
 #define USE_IMU_BMI270
 #define IMU_BMI270_ALIGN        CW90_DEG
 #define BMI270_CS_PIN           PB2
 #define BMI270_SPI_BUS          BUS_SPI1
 
-// Black FCs
 #define USE_IMU_ICM42605
 #define IMU_ICM42605_ALIGN      CW180_DEG
 #define ICM42605_CS_PIN         PB2
 #define ICM42605_SPI_BUS        BUS_SPI1
-// GYRO=BMI270, ACC=BMI270, BARO=DPS310 PINK
-// GYRO=ICM42688P, ACC=ICM42688P, BARO=DPS310 BLACK
 
 #define USE_VCP
 
@@ -73,6 +69,8 @@
 #define USE_BARO_BMP280
 #define USE_BARO_MS5611
 #define USE_BARO_BMP085
+#define USE_BARO_DPS310
+#define USE_BARO_SPL06
 
 
 #define USE_MAG
