@@ -1,0 +1,1 @@
+target_stm32f722xe(JMIF722A SKIP_RELEASES)
